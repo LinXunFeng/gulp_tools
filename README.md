@@ -21,7 +21,7 @@ cnpm i gulp -g
 
 
 
-进入到 `gulpTools` 目录，终端输入命令，会自动安装所需的第三方库
+进入到 `gulp_tools` 目录，终端输入命令，会自动安装所需的第三方库
 
 ```shell
 cnpm install
@@ -86,12 +86,13 @@ gulp.task('js_minify_rename', ()=>{
 
 ## 插件说明
 
-| 插件          | 功能                          | 地址                                            |
-| ------------- | ----------------------------- | ----------------------------------------------- |
-| `gulp-uglify` | 压缩js文件                    | `https://github.com/terinjokes/gulp-uglify`     |
-| `gulp-concat` | 整合js文件                    | `https://github.com/gulp-community/gulp-concat` |
-| `gulp-rename` | 重命名js文件                  | `https://github.com/hparra/gulp-rename`         |
-| `gulp-babel`  | babel调用插件<br>es6语法转es5 | `https://github.com/babel/gulp-babel`           |
+| 插件              | 功能                              | 地址                                                 |
+| ----------------- | --------------------------------- | ---------------------------------------------------- |
+| `gulp-uglify`     | 压缩js文件                        | `https://github.com/terinjokes/gulp-uglify`          |
+| `gulp-concat`     | 整合js文件                        | `https://github.com/gulp-community/gulp-concat`      |
+| `gulp-rename`     | 重命名js文件                      | `https://github.com/hparra/gulp-rename`              |
+| `gulp-babel`      | babel调用插件<br>es6语法转es5     | `https://github.com/babel/gulp-babel`                |
+| `gulp-sourcemaps` | 方便浏览器调试<br/>已压缩的js文件 | `https://github.com/gulp-sourcemaps/gulp-sourcemaps` |
 
 
 
