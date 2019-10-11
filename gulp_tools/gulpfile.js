@@ -4,6 +4,7 @@ const concat = require('gulp-concat');
 const rename = require('gulp-rename');
 const babel = require('gulp-babel');
 const sourcemaps = require('gulp-sourcemaps');
+const cssmin = require('gulp-cssmin');
 
 // 压缩 src/js 目录下的所有js文件，包括子目录
 gulp.task('js_minify', ()=>{
@@ -57,7 +58,17 @@ gulp.task('js_sourcemap', ()=>{
         .pipe(gulp.dest('./build/js'));
 });
 
+// css文件合并与压缩
+gulp.task('style', ()=>{
+    return gulp
+        .src(['./src/css/**/*.css'])
+        .pipe(concat('style.min.css'))
+        .pipe(cssmin())
+        .pipe(gulp.dest('./build/css/'));
+});
+
 // 终端执行gulp后的默认操作
-gulp.task('default', ['js_minify']);
+// gulp.task('default', ['js_minify']);
+gulp.task('default', ['style']);
 
 // cnpm i gulp-babel @babel/core @babel/preset-env -D
