@@ -1,4 +1,4 @@
-# gulpTools
+# gulp_tools
 gulp小工具集
 
 
@@ -84,6 +84,41 @@ gulp.task('js_minify_rename', ()=>{
 
 
 
+```js
+gulp style
+
+// css文件合并与压缩
+gulp.task('style', ()=>{
+    return gulp
+        .src(['./src/css/**/*.css'])
+        .pipe(concat('style.min.css'))
+        .pipe(cssmin())
+        .pipe(gulp.dest('./build/css/'));
+});
+```
+
+
+
+```js
+gulp image
+
+// 压缩图片
+gulp.task('image', ()=>{
+    return gulp
+        .src(['./src/image/**/*'])
+        .pipe(imagemin([
+            imagemin.gifsicle({interlaced: true}), // gif隔行扫描
+            imagemin.jpegtran({progressive: true}), // 渐进式
+            imagemin.optipng({optimizationLevel: 5}) // 压缩级别 5：最高级
+        ]))
+        .pipe(gulp.dest('./build/image/'));
+});
+```
+
+
+
+
+
 ## 插件说明
 
 | 插件              | 功能                              | 地址                                                 |
@@ -93,6 +128,8 @@ gulp.task('js_minify_rename', ()=>{
 | `gulp-rename`     | 重命名js文件                      | `https://github.com/hparra/gulp-rename`              |
 | `gulp-babel`      | babel调用插件<br>es6语法转es5     | `https://github.com/babel/gulp-babel`                |
 | `gulp-sourcemaps` | 方便浏览器调试<br/>已压缩的js文件 | `https://github.com/gulp-sourcemaps/gulp-sourcemaps` |
+| `gulp-cssmin`     | 压缩css文件                       | `https://github.com/pdehaan/gulp-cssmin`             |
+| `gulp-imagemin`   | 压缩图片                          | `https://github.com/sindresorhus/gulp-imagemin`      |
 
 
 
